@@ -1,0 +1,16 @@
+*.o
+*.mod.c
+*.so
+*.ko
+*.mod
+*.cmd
+*.rej
+*.orig
+*.swp
+*.dtb
+*.dtb.o
+*.dtb.S
+*.dtbo.S
+Module.symvers
+dtbs-list
+modules.order
