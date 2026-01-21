@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
+set -e
 
 commit=$1
 tag="rpi-6.12.y"
 
 # fetch by commit, if given, otherwise fetch by branch/tag
 if [ -z "$commit" ]; then
-    echo Fetching original sources by tag/branch: $tag
+    echo Fetching original sources by tag/branch: "$tag"
     base_url="https://raw.githubusercontent.com/raspberrypi/linux/${tag}/drivers/gpu/drm/vc4"
 else
-    echo Fetching original sources by commit: $commit
+    echo Fetching original sources by commit: "$commit"
     base_url="https://raw.githubusercontent.com/raspberrypi/linux/${commit}/drivers/gpu/drm/vc4"
 fi
 
@@ -47,7 +48,7 @@ declare -a files=(
     vc_image_types.h
 )
 
-for file in ${files[@]}; do
-    echo -n CURL $file 
-    curl --silent -N --output-dir src -O "${base_url}/$file" && echo " OK"
+for file in "${files[@]}"; do
+    echo -n CURL "$file"
+    curl --silent --clobber --output-dir src -O "${base_url}/$file" && echo " OK"
 done
