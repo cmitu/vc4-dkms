@@ -8,4 +8,5 @@ fi
 
 make KERNEL_VERSION="$kernelver" sources
 make patch_trace
+make patch_series
 make clean
