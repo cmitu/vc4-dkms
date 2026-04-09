@@ -44,7 +44,6 @@ declare -a files=(
     vc4_validate.c
     vc4_validate_shaders.c
     vc4_vec.c
-    vc4_trace.h
     vc_image_types.h
 )
 
