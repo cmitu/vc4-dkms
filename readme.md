@@ -2,10 +2,7 @@
 
 This contains the downstream RaspberrryPi Linux kernel version with the following modifications/patches:
 
- 1. A patch to workaround the GPU resetting error reported in https://github.com/raspberrypi/linux/issues/5780
- 2. A patch to enable interlaced video modes for the DPI port (see https://github.com/raspberrypi/linux/issues/2668).
-
-Both patches I think originate from Github issues pages, but the versions included here have been picked up from the Recalbox project, which included them in their Linux kernel patches ([here for instance](https://gitlab.com/recalbox/recalbox/-/commit/b05d2c3202c6590ab63846793a7d9a8f26805efd)).
+ 1. A patch to enable interlaced video modes for the DPI port (see https://github.com/raspberrypi/linux/issues/2668). Picked up from the Recalbox project, which included them in their Linux kernel patches ([here for instance](https://gitlab.com/recalbox/recalbox/-/commit/b05d2c3202c6590ab63846793a7d9a8f26805efd)).
 
 ## Installation
 
@@ -23,7 +20,7 @@ git clone https://github.com/cmitu/vc4-dkms
 sudo dkms add vc4-dkms
 
 # build and install the module
-sudo dkms install vc4-dkms/1.0
+sudo dkms install vc4-dkms/1.2
 
 # reboot to activate the module
 sudo reboot
@@ -33,7 +30,7 @@ sudo reboot
 
 ## Update/Removal
  
-To update to a new version of the module from this repo, remove the driver with `sudo dkms remove -m vc4-dkms -v 1.0` and then repeat the installation steps above.
+To update to a new version of the module from this repo, remove the driver with `sudo dkms remove -m vc4-dkms -v 1.2` and then repeat the installation steps above.
 
 To find out which version(s) are installed just run `dkms status` and look at the output:
 
